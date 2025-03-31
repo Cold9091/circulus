@@ -28,7 +28,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-dark-200 overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex items-center bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-dark-200 overflow-hidden pt-24 md:pt-32">
       {/* Elementos decorativos com estilo Apple */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
