@@ -1,19 +1,14 @@
 import { motion } from "framer-motion";
 import { blurIn, fadeIn, parallaxScroll, revealText, slideUp, staggerContainer } from "@/lib/animations";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import CountUp from "react-countup";
 
 export default function Hero() {
-  const parallaxRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const [countStarted, setCountStarted] = useState(false);
 
-  // Efeito de parallax no scroll
+  // Efeito de reveal em caracteres
   useEffect(() => {
-    const handleScroll = () => {
-      if (!parallaxRef.current) return;
-      const scrollY = window.scrollY;
-      parallaxRef.current.style.transform = `translateY(${scrollY * 0.1}px)`;
-    };
-
     // Efeito de reveal em caracteres
     if (textRef.current) {
       const text = textRef.current.innerText;
@@ -30,9 +25,6 @@ export default function Hero() {
         textRef.current?.classList.add('visible');
       }, 100);
     }
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -105,38 +97,22 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Imagem com efeito de vidro e sombras inspiradas na Apple */}
-        <motion.div 
-          className="relative mx-auto max-w-4xl aspect-video mb-24"
-          initial="hidden"
-          animate="visible"
-          variants={blurIn}
-        >
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-gray-300 to-gray-400 dark:from-gray-700 dark:to-gray-600 rounded-2xl blur opacity-50"></div>
-          <div className="glass-card rounded-2xl overflow-hidden relative" ref={parallaxRef}>
-            <img
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-              alt="Equipe trabalhando em marketing digital"
-              className="w-full h-full object-cover rounded-2xl shadow-xl"
-              width="1600"
-              height="900"
-            />
-          </div>
-        </motion.div>
+
 
         {/* Stats com estilo Apple */}
         <motion.div 
           className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12"
           initial="hidden"
           whileInView="visible"
+          onViewportEnter={() => setCountStarted(true)}
           viewport={{ once: true, amount: 0.2 }}
           variants={staggerContainer}
         >
           {[
-            { value: "120+", label: "Clientes Satisfeitos" },
-            { value: "200+", label: "Projetos Entregues" },
-            { value: "1M+", label: "Engajamento Gerado" },
-            { value: "98%", label: "Taxa de Satisfação" },
+            { value: 120, suffix: "+", label: "Clientes Satisfeitos" },
+            { value: 200, suffix: "+", label: "Projetos Entregues" },
+            { value: 1, suffix: "M+", label: "Engajamento Gerado" },
+            { value: 98, suffix: "%", label: "Taxa de Satisfação" },
           ].map((stat, index) => (
             <motion.div
               key={index}
@@ -144,7 +120,19 @@ export default function Hero() {
               variants={fadeIn}
               custom={index * 0.1}
             >
-              <h3 className="text-3xl md:text-4xl font-bold mb-2 text-black dark:text-white">{stat.value}</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-2 text-black dark:text-white">
+                {countStarted && (
+                  <CountUp
+                    start={0}
+                    end={stat.value}
+                    duration={2.5}
+                    separator="."
+                    decimal=","
+                    suffix={stat.suffix}
+                    delay={index * 0.2}
+                  />
+                )}
+              </h3>
               <p className="text-gray-600 dark:text-gray-300">{stat.label}</p>
             </motion.div>
           ))}

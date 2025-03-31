@@ -1,10 +1,10 @@
-export const WHATSAPP_NUMBER = "123456789";
-export const EMAIL_CONTACT = "contato@digitalpro.co.ao";
+export const WHATSAPP_NUMBER = "+244931475544";
+export const EMAIL_CONTACT = "ravicarlos.ao@gmail.com";
 
 export const SOCIAL_LINKS = {
-  instagram: "https://www.instagram.com",
-  facebook: "https://www.facebook.com",
-  tiktok: "https://www.tiktok.com"
+  instagram: "https://www.instagram.com/ravi_gloria_carlos/",
+  facebook: "https://www.facebook.com", 
+  tiktok: "https://www.tiktok.com/@ravi.carlos"
 };
 
 export const PACKAGES = {

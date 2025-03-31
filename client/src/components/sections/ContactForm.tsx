@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { WHATSAPP_NUMBER, EMAIL_CONTACT, SOCIAL_LINKS } from "@/lib/constants";
 
 export default function ContactForm() {
   const { toast } = useToast();
@@ -21,16 +21,41 @@ export default function ContactForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      await apiRequest("POST", "/api/contact", formData);
+      // Formatando a mensagem para o WhatsApp
+      const whatsappNumber = WHATSAPP_NUMBER.replace(/\D/g, "");
+      
+      const serviceMap: Record<string, string> = {
+        "social-basic": "Social Media - Pacote Básico",
+        "social-intermediate": "Social Media - Pacote Intermediário",
+        "social-advanced": "Social Media - Pacote Avançado",
+        "web-landing": "Website - Landing Page",
+        "web-professional": "Website - Site Profissional",
+        "web-ecommerce": "Website - E-commerce",
+        "custom": "Plano Personalizado"
+      };
+      
+      const serviceName = formData.service ? serviceMap[formData.service] || formData.service : "Não especificado";
+      
+      const message = encodeURIComponent(
+        `*Olá, acabei de visitar o site da Digital Pro Angola*\n\n` +
+        `*Nome:* ${formData.name}\n` +
+        `*Email:* ${formData.email}\n` +
+        `*Telefone:* ${formData.phone}\n` +
+        `*Serviço de interesse:* ${serviceName}\n\n` +
+        `*Mensagem:*\n${formData.message || "Gostaria de obter mais informações sobre os serviços."}`
+      );
+      
+      // Abre o WhatsApp em uma nova aba
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
       
       toast({
-        title: "Mensagem enviada com sucesso",
-        description: "Entraremos em contato em até 24 horas.",
+        title: "Redirecionando para o WhatsApp",
+        description: "Continue a conversa diretamente pelo WhatsApp.",
         variant: "default",
       });
       
@@ -44,11 +69,11 @@ export default function ContactForm() {
       });
     } catch (error) {
       toast({
-        title: "Erro ao enviar mensagem",
+        title: "Erro ao processar formulário",
         description: "Por favor, tente novamente mais tarde.",
         variant: "destructive",
       });
-      console.error("Error submitting form:", error);
+      console.error("Error processing form:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -56,14 +81,14 @@ export default function ContactForm() {
 
   const contactInfo = [
     {
-      icon: "fas fa-phone",
+      icon: "fab fa-whatsapp",
       title: "WhatsApp",
-      content: "(+244) 123 456 789",
+      content: WHATSAPP_NUMBER,
     },
     {
       icon: "fas fa-envelope",
       title: "E-mail",
-      content: "contato@digitalpro.co.ao",
+      content: EMAIL_CONTACT,
     },
     {
       icon: "fas fa-clock",
@@ -73,9 +98,9 @@ export default function ContactForm() {
   ];
 
   const socialLinks = [
-    { icon: "fab fa-instagram", url: "https://www.instagram.com", bg: "#E1306C", label: "Instagram" },
-    { icon: "fab fa-facebook-f", url: "https://www.facebook.com", bg: "#1877F2", label: "Facebook" },
-    { icon: "fab fa-tiktok", url: "https://www.tiktok.com", bg: "#000000", label: "TikTok" },
+    { icon: "fab fa-instagram", url: SOCIAL_LINKS.instagram, bg: "#E1306C", label: "Instagram" },
+    { icon: "fab fa-facebook-f", url: SOCIAL_LINKS.facebook, bg: "#1877F2", label: "Facebook" },
+    { icon: "fab fa-tiktok", url: SOCIAL_LINKS.tiktok, bg: "#000000", label: "TikTok" },
   ];
 
   return (
@@ -219,7 +244,8 @@ export default function ContactForm() {
                 disabled={isSubmitting}
                 className="w-full gradient-button text-white font-medium py-3 px-6 rounded-lg transition hover:opacity-90 disabled:opacity-70"
               >
-                {isSubmitting ? "Enviando..." : "Enviar Solicitação"}
+                {isSubmitting ? "Processando..." : "Contatar via WhatsApp"}
+                {!isSubmitting && <i className="fab fa-whatsapp ml-2"></i>}
               </button>
             </form>
           </div>
