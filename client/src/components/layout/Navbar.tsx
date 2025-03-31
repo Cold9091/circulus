@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "../ui/theme-toggle";
+import LanguageSwitcher from "../ui/language-switcher";
+import { useLanguage } from "../../hooks/use-language";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +30,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
-  const logoText = "DigitalPro";
+  const logoText = "CIRCULUS DIGITAL & PROJEFIS";
   
   return (
     <header 
@@ -51,25 +53,15 @@ export default function Navbar() {
                   <span className="text-white dark:text-black font-bold text-lg">D</span>
                 </motion.div>
               </div>
-              <div className="flex overflow-hidden">
-                {logoText.split('').map((letter, i) => (
-                  <motion.span
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ 
-                      opacity: 1, 
-                      y: 0,
-                      transition: {
-                        delay: i * 0.05,
-                        duration: 0.6,
-                        ease: [0.16, 1, 0.3, 1]
-                      }
-                    }}
-                    className="text-gray-900 dark:text-white font-medium tracking-tight text-lg"
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
+              <div className="flex overflow-hidden items-center max-w-[200px] md:max-w-xs">
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8 }}
+                  className="text-gray-900 dark:text-white font-medium tracking-tight text-sm md:text-base whitespace-nowrap"
+                >
+                  {logoText}
+                </motion.span>
               </div>
             </Link>
           </div>
@@ -85,7 +77,10 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <ThemeToggle />
+            <div className="flex items-center space-x-2">
+              <LanguageSwitcher />
+              <ThemeToggle />
+            </div>
           </nav>
           
           {/* Action Button (desktop) */}
@@ -100,6 +95,7 @@ export default function Navbar() {
           
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-4 md:hidden">
+            <LanguageSwitcher />
             <ThemeToggle />
             <button
               onClick={toggleMenu}

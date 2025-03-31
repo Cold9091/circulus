@@ -95,6 +95,11 @@ export default function ContactForm() {
       title: "Horário de Atendimento",
       content: "Segunda a Sexta: 08:00 às 18:00",
     },
+    {
+      icon: "fas fa-map-marker-alt",
+      title: "Localização",
+      content: "Centralidade do Sequele, Bloco 8, predio 43, Entrada A, Apartamento 002, Icole & Bengo, Angola",
+    },
   ];
 
   const socialLinks = [

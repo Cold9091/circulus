@@ -1,0 +1,61 @@
+Adicionar um botão de alternância de idioma para suporte multilíngue
+
+Testimoniais dinâmicos: Fazer os testimoniais alternarem automaticamente como um carrossel
+
+Implementar um recurso de rolagem suave para seções em uma página única
+
+Adicionar animações sutis ao passar o mouse sobre os itens do menu de navegação
+
+Ícones personalizados: Substituir os ícones "font-awesome" por ícones SVG minimalistas no estilo Apple para maior elegância
+
+Modo de tema escuro aprimorado: Criar uma transição suave ao trocar entre os temas claro e escuro
+
+Melhorar a performance: Otimizar carregamento de imagens e recursos através de lazy loading
+
+Melhorar SEO: Adicionar meta tags específicas para melhorar o posicionamento nos motores de busca
+
+O Nome do é CIRCULUS DIGITAL & PROJEFIS, e a nossa localização em Angola, na provincia Icole & Bengo na Centralidade do Sequele, Bloco 8, predio 43, Entrada A, Apartamento 002
+
+Efeito de parallax avançado: Criar camadas que se movem em velocidades diferentes durante o scroll, criando profundidade
+
+Efeito de gradiente animado: Fundo com gradiente sutilmente animado que muda de cor lentamente no estilo Apple
+
+Animação de entrada para cada seção: Quando o usuário rola para uma nova seção, os elementos aparecem em sequência com efeitos diferentes
+
+Efeito de mouse trail: Pequenos rastros ou partículas seguindo o cursor do mouse com design minimalista
+
+Efeito de distorção ao hover: Leve distorção ou ondulação ao passar o mouse sobre imagens
+
+Texto com efeito de máquina de escrever: Para frases de impacto ou slogans
+
+Efeito de splash nos botões: Ao clicar, uma onda circular se expande do ponto de clique
+
+Efeito de hover em imagens: Leve zoom ou revelação de informações adicionais
+
+Menu de navegação com transições suaves: Efeito de fading elegante ao navegar entre páginas
+
+Indicador de scroll personalizado: Substituir a barra de rolagem padrão por uma personalizada no estilo Apple
+
+Botões com efeito magnético: Os botões parecem atrair o cursor quando estão próximos
+
+Notificações com animação sutil: Toasts ou alertas que surgem com movimento suave
+
+Ícones animados: Pequenas animações nos ícones quando o mouse passa por cima
+
+Elementos flutuantes: Alguns elementos com movimento leve de flutuação constante
+
+Efeito de desfoque ao abrir modais: Fundo desfocado quando abre um popup/modal
+
+Efeito de glass morphism: Elementos translúcidos com efeito de vidro embaçado no estilo MacOS
+
+Modo escuro com animação: Transição suave e animada entre os modos claro e escuro
+
+Página de carregamento inicial: Animação minimalista de carregamento antes de mostrar o conteúdo principal
+
+Indicador de progresso de leitura: Barra sutil que mostra quanto da página já foi vista
+
+Efeito de hover nos títulos: Efeito sutil de gradiente que se move ao passar o mouse pelos títulos
+
+Animação de loading personalizada: Substituir loaders tradicionais por animações no estilo Apple
+
+Cards com sombras dinâmicas: Sombras que se movem conforme a posição do cursor
