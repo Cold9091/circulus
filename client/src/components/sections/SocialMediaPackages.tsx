@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
+import { staggerContainer, fadeInUp, cardHover, buttonTap, buttonHover } from "@/lib/animations";
 
 export default function SocialMediaPackages() {
   const packages = [
@@ -70,10 +70,13 @@ export default function SocialMediaPackages() {
             <motion.div
               key={index}
               className={`
-                bg-white dark:bg-dark-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300
+                bg-white dark:bg-dark-200 rounded-2xl overflow-hidden shadow-lg micro-card
                 ${pkg.popular ? 'transform scale-105 border-2 border-primary-400 dark:border-primary-600 relative z-10' : 'border border-gray-100 dark:border-dark-100'}
               `}
               variants={fadeInUp}
+              whileInView="visible"
+              initial="hidden"
+              viewport={{ once: true, amount: 0.2 }}
             >
               {pkg.popular && (
                 <div className="absolute top-0 left-0 w-full py-2 bg-primary-600 text-white text-center text-sm font-medium">
@@ -101,16 +104,18 @@ export default function SocialMediaPackages() {
                     </li>
                   ))}
                 </ul>
-                <a
+                <motion.a
                   href="#contato"
                   className={`block w-full py-3 px-6 text-center ${
                     pkg.popular
                       ? 'gradient-button text-white hover:opacity-90'
                       : 'bg-gray-100 dark:bg-dark-100 hover:bg-gray-200 dark:hover:bg-dark-300 text-gray-800 dark:text-white'
-                  } font-medium rounded-lg transition`}
+                  } font-medium rounded-lg micro-button`}
+                  whileTap={{ scale: 0.97 }}
+                  whileHover={{ y: -2 }}
                 >
                   Escolher Plano
-                </a>
+                </motion.a>
               </div>
             </motion.div>
           ))}
@@ -120,12 +125,14 @@ export default function SocialMediaPackages() {
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             Também oferecemos planos personalizados para necessidades específicas.
           </p>
-          <a
+          <motion.a
             href="#contato"
-            className="inline-block py-3 px-8 border-2 border-primary-500 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-medium rounded-full hover:bg-primary-50 dark:hover:bg-primary-900/30 transition"
+            className="inline-block py-3 px-8 border-2 border-primary-500 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-medium rounded-full hover:bg-primary-50 dark:hover:bg-primary-900/30 micro-button"
+            whileTap={{ scale: 0.97 }}
+            whileHover={{ y: -2, boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)" }}
           >
             Solicitar Plano Personalizado
-          </a>
+          </motion.a>
         </div>
       </div>
     </section>

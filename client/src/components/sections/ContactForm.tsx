@@ -136,17 +136,24 @@ export default function ContactForm() {
               <h3 className="font-semibold text-lg mb-4">Siga-nos nas Redes Sociais</h3>
               <div className="flex space-x-4">
                 {socialLinks.map((link, index) => (
-                  <a
+                  <motion.a
                     key={index}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-white hover:opacity-90 transition"
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-white"
                     style={{ backgroundColor: link.bg }}
                     aria-label={link.label}
+                    whileHover={{ 
+                      scale: 1.1, 
+                      rotate: 5,
+                      boxShadow: "0 8px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.1)"
+                    }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
                     <i className={`${link.icon} text-xl`}></i>
-                  </a>
+                  </motion.a>
                 ))}
               </div>
             </div>
@@ -239,14 +246,17 @@ export default function ContactForm() {
                 ></textarea>
               </div>
               
-              <button
+              <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full gradient-button text-white font-medium py-3 px-6 rounded-lg transition hover:opacity-90 disabled:opacity-70"
+                className="w-full gradient-button text-white font-medium py-3 px-6 rounded-lg micro-button disabled:opacity-70"
+                whileTap={{ scale: isSubmitting ? 1 : 0.97 }}
+                whileHover={{ scale: isSubmitting ? 1 : 1.02, y: isSubmitting ? 0 : -2 }}
+                transition={{ duration: 0.2 }}
               >
                 {isSubmitting ? "Processando..." : "Contatar via WhatsApp"}
                 {!isSubmitting && <i className="fab fa-whatsapp ml-2"></i>}
-              </button>
+              </motion.button>
             </form>
           </div>
         </div>

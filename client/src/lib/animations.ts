@@ -128,3 +128,72 @@ export const textCharacterAnimation = {
     },
   },
 };
+
+// Micro-interações para elementos interativos
+export const buttonTap = {
+  tap: { 
+    scale: 0.97,
+    boxShadow: "0px 0px 0px rgba(0,0,0,0.1)"
+  }
+};
+
+export const buttonHover = {
+  hover: { 
+    scale: 1.03,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut"
+    }
+  }
+};
+
+export const cardHover = {
+  rest: { 
+    scale: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  },
+  hover: { 
+    scale: 1.03,
+    y: -6,
+    transition: {
+      duration: 0.3,
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+};
+
+export const cardTilt = {
+  hover: (direction: number) => ({
+    rotateX: direction ? 3 : -3,
+    rotateY: direction ? -3 : 3,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut"
+    }
+  })
+};
+
+export const iconSpin = {
+  hover: {
+    rotate: 360,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut"
+    }
+  }
+};
+
+export const linkHover = {
+  hover: {
+    scale: 1.05,
+    x: 2,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut"
+    }
+  }
+};

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
+import { staggerContainer, fadeInUp, buttonTap, buttonHover } from "@/lib/animations";
 
 export default function WebsitePackages() {
   const packages = [
@@ -92,10 +92,15 @@ export default function WebsitePackages() {
             <motion.div
               key={index}
               className={`
-                bg-white dark:bg-dark-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300
+                bg-white dark:bg-dark-200 rounded-2xl overflow-hidden shadow-lg micro-card
                 ${pkg.popular ? 'transform scale-105 border-2 border-primary-400 dark:border-primary-600 relative z-10' : 'border border-gray-100 dark:border-dark-100'}
               `}
               variants={fadeInUp}
+              whileHover={{
+                y: -8,
+                transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] },
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
             >
               {pkg.popular && (
                 <div className="absolute top-0 left-0 w-full py-2 bg-primary-600 text-white text-center text-sm font-medium">
@@ -119,16 +124,18 @@ export default function WebsitePackages() {
                     </li>
                   ))}
                 </ul>
-                <a
+                <motion.a
                   href="#contato"
                   className={`block w-full py-3 px-6 text-center ${
                     pkg.popular
                       ? 'gradient-button text-white hover:opacity-90'
                       : 'bg-gray-100 dark:bg-dark-100 hover:bg-gray-200 dark:hover:bg-dark-300 text-gray-800 dark:text-white'
-                  } font-medium rounded-lg transition`}
+                  } font-medium rounded-lg micro-button`}
+                  whileTap={buttonTap}
+                  whileHover={buttonHover}
                 >
                   Solicitar Orçamento
-                </a>
+                </motion.a>
               </div>
             </motion.div>
           ))}
@@ -153,12 +160,18 @@ export default function WebsitePackages() {
               </div>
             </div>
             <div className="text-center md:text-right">
-              <a
+              <motion.a
                 href="#contato"
-                className="inline-block gradient-button text-white font-medium py-3 px-6 rounded-full hover:opacity-90 transition"
+                className="inline-block gradient-button text-white font-medium py-3 px-6 rounded-full micro-button"
+                whileTap={buttonTap}
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -3,
+                  boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
+                }}
               >
                 Solicitar Consultoria
-              </a>
+              </motion.a>
             </div>
           </div>
         </div>

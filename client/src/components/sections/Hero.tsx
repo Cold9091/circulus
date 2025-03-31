@@ -88,12 +88,22 @@ export default function Hero() {
             variants={fadeIn}
             custom={0.4}
           >
-            <a href="#servicos" className="apple-button">
+            <motion.a 
+              href="#servicos" 
+              className="apple-button micro-button"
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)" }}
+            >
               Conhecer Serviços
-            </a>
-            <a href="#contato" className="subtle-button">
+            </motion.a>
+            <motion.a 
+              href="#contato" 
+              className="subtle-button micro-button"
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05, boxShadow: "0 8px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)" }}
+            >
               Solicitar Orçamento
-            </a>
+            </motion.a>
           </motion.div>
         </motion.div>
 
@@ -116,9 +126,15 @@ export default function Hero() {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center p-6 glass-card hover-lift"
+              className="text-center p-6 glass-card micro-card"
               variants={fadeIn}
               custom={index * 0.1}
+              whileHover={{ 
+                y: -5, 
+                scale: 1.02,
+                boxShadow: "0 15px 30px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -5px rgba(0, 0, 0, 0.04)",
+                transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }
+              }}
             >
               <h3 className="text-3xl md:text-4xl font-bold mb-2 text-black dark:text-white">
                 {countStarted && (
