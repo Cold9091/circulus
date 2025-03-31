@@ -23,7 +23,6 @@ export default function Navbar() {
     { name: "Serviços", href: "#servicos" },
     { name: "Social Media", href: "#social-media" },
     { name: "Websites", href: "#websites" },
-    { name: "Portfólio", href: "#portfolio" },
     { name: "Contato", href: "#contato" },
   ];
 

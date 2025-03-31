@@ -5,7 +5,6 @@ import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import SocialMediaPackages from "@/components/sections/SocialMediaPackages";
 import WebsitePackages from "@/components/sections/WebsitePackages";
-import Portfolio from "@/components/sections/Portfolio";
 import Testimonials from "@/components/sections/Testimonials";
 import ContactForm from "@/components/sections/ContactForm";
 import WhatsappButton from "@/components/ui/whatsapp-button";
@@ -25,7 +24,6 @@ export default function Home() {
         <Services />
         <SocialMediaPackages />
         <WebsitePackages />
-        <Portfolio />
         <Testimonials />
         <ContactForm />
       </main>
