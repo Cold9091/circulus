@@ -7,8 +7,13 @@
     @apply border-border;
   }
 
-  body {
-    @apply font-sans antialiased bg-background text-foreground tracking-tight;
+  html, body {
+    @apply font-sans antialiased tracking-tight;
+    background-color: white;
+  }
+  
+  .dark html, .dark body {
+    background-color: black;
   }
   
   h1, h2, h3, h4, h5, h6 {
