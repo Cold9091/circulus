@@ -1,0 +1,131 @@
+# Site Profissional de Social Media e Criação de Websites
+
+## Descrição
+
+Um site moderno e dinâmico que apresenta os serviços de social media e desenvolvimento de websites com animações suaves, design responsivo e otimização para SEO. O foco é atrair pequenos negócios e influenciadores que precisam de gestão de redes sociais e sites profissionais para potencializar sua presença digital.
+
+## Pacotes de Serviço
+
+### Social Media
+
+#### **Pacote Básico - Kz 35.000/mês**
+
+- 12 posts por mês (imagem e texto).
+- 4 stories semanais.
+- Relatório de engajamento mensal.
+- Sem gestão de anúncios.
+
+#### **Pacote Intermediário - Kz 75.000/mês**
+
+- 20 posts por mês.
+- 6 stories semanais.
+- Reels curtos (2 por mês).
+- Relatórios detalhados e estratégias de crescimento.
+- Suporte básico para anúncios.
+
+#### **Pacote Avançado - Kz 120.000/mês**
+
+- 30 posts por mês.
+- 10 stories semanais.
+- 4 reels ou vídeos curtos.
+- Gestão de anúncios (Facebook, Instagram e Google Ads).
+- Suporte estratégico personalizado.
+
+### Desenvolvimento de Websites
+
+#### **Pacote Landing Page - Kz 75.000**
+
+- Site de uma página.
+- Design responsivo e otimizado para SEO.
+- Formulário de contato.
+- Tempo de entrega: 5 dias úteis.
+
+#### **Pacote Profissional - Kz 120.000**
+
+- Site institucional completo (4-6 páginas).
+- Integração com redes sociais.
+- Blog e sistema de gerenciamento de conteúdo.
+- Tempo de entrega: 10-15 dias úteis.
+
+#### **Pacote E-commerce - Kz 170.000**
+
+- Loja virtual completa.
+- Integração com sistemas de pagamento.
+- Gestão de estoque e pedidos.
+- Otimização para conversão.
+- Tempo de entrega: 15-20 dias úteis.
+
+## Funcionalidades
+
+### Para Clientes de Social Media
+
+- Planos flexíveis de gerenciamento de redes sociais.
+- Criação de posts, stories e reels personalizados.
+- Análise de engajamento e relatórios mensais.
+- Gestão de anúncios pagos (Facebook Ads, Instagram Ads, Google Ads).
+- Estratégias de crescimento orgânico e interação com seguidores.
+
+### Para Clientes de Criação de Websites
+
+- Desenvolvimento de sites responsivos e otimizados para SEO.
+- Integração com e-commerce e sistemas de pagamento.
+- Hospedagem segura e domínio personalizado.
+- Sites institucionais, blogs e landing pages.
+- Manutenção e suporte técnico.
+
+## Tecnologias Utilizadas
+
+### Frontend
+
+- **Next.js** para carregamento rápido e SEO otimizado.
+- **TailwindCSS** para um design moderno e responsivo.
+- **Framer Motion** para animações fluidas.
+- **Shadcn UI** para componentes estilizados.
+
+### SEO e Performance
+
+- **Next.js Image Optimization** para carregamento rápido.
+- **Schema Markup** para melhorar ranking no Google.
+- **Google Analytics** para monitoramento de visitantes.
+- **Meta Tags Dinâmicas** para compartilhamento eficiente.
+
+## Animações e Experiência do Usuário
+
+- **Efeitos de Scroll** para transições suaves entre seções.
+- **Hover Effects** em botões e cards.
+- **Dark Mode** para melhor experiência de leitura.
+- **Parallax** para um visual dinâmico.
+
+## Configuração e Hospedagem
+
+### Hospedagem
+
+- **Vercel** para desempenho e tempo de resposta instantâneo.
+- **Cloudflare** para segurança e otimização de cache.
+
+### Domínio e E-mail Profissional
+
+- **Google Domains** ou **Namecheap** para domínio personalizado.
+- **Zoho Mail** para e-mails profissionais.
+
+## Chamadas para Ação (CTAs)
+
+- **Botão de Contato via WhatsApp** na homepage.
+
+- **Formulário de Orçamento Rápido**.
+
+- **Depoimentos** para aumentar credibilidade.\
+  Links Para as minhas Rede Social ( Instagram, Facebook, Tik Tok) com os icones
+
+- **Portfólio** com projetos anteriores.
+
+## Design
+
+- **Degradê entre roxo e preto**, com tons semelhantes.
+- **Fonte Poppins** para um design elegante e moderno.
+- **100% responsivo**, garantindo boa experiência em desktop e mobile.
+
+---
+
+Esse site garantirá o máximo de visibilidade e engajamento, gerando mais clientes e credibilidade para os serviços de social media e desenvolvimento web.
+
