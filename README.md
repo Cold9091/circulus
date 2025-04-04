@@ -1,6 +1,6 @@
-# Digital Pro Angola - Website
+# GENESIS - Website
 
-Website institucional da Digital Pro Angola, desenvolvido com React, TypeScript e TailwindCSS.
+Website institucional da GENESIS, desenvolvido com React, TypeScript e TailwindCSS.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -104,6 +104,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 📞 Contato
 
-Digital Pro Angola - [@digitalproangola](https://instagram.com/digitalproangola)
+GENESIS - [@genesis_angola](https://instagram.com/genesis_angola)
 
 Link do Projeto: [https://github.com/Cold9091/meu-site](https://github.com/Cold9091/meu-site) 

@@ -42,7 +42,7 @@ export default function ContactForm() {
       const serviceName = formData.service ? serviceMap[formData.service] || formData.service : "Não especificado";
       
       const message = encodeURIComponent(
-        `*Olá, acabei de visitar o site da Digital Pro Angola*\n\n` +
+        `*Olá, acabei de visitar o site da GENESIS*\n\n` +
         `*Nome:* ${formData.name}\n` +
         `*Email:* ${formData.email}\n` +
         `*Telefone:* ${formData.phone}\n` +

@@ -8,6 +8,7 @@ import { useLanguage } from "../../hooks/use-language";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,18 +20,16 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Início", href: "#inicio" },
-    { name: "Serviços", href: "#servicos" },
-    { name: "Social Media", href: "#social-media" },
-    { name: "Websites", href: "#websites" },
-    { name: "Contato", href: "#contato" },
+    { name: t('nav.home'), href: "#inicio" },
+    { name: t('nav.services'), href: "#servicos" },
+    { name: t('nav.social'), href: "#social-media" },
+    { name: t('nav.websites'), href: "#websites" },
+    { name: t('nav.contact'), href: "#contato" },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
-  const logoText = "CIRCULUS DIGITAL & PROJEFIS";
-  
   return (
     <header 
       className={`fixed top-0 z-40 w-full transition-all duration-500 ${
@@ -41,27 +40,17 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
+          {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="group flex items-center">
-              <div className="overflow-hidden mr-1">
-                <motion.div 
-                  className="h-8 w-8 rounded-lg bg-black dark:bg-white flex items-center justify-center"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <span className="text-white dark:text-black font-bold text-lg">D</span>
-                </motion.div>
+              <div className="relative w-12 h-12 mr-3">
+                <div className="absolute inset-0 bg-black dark:bg-white rounded-full animate-pulse" />
+                <div className="absolute inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 rounded-full animate-spin-slow" />
+                <div className="absolute inset-2 bg-black dark:bg-white rounded-full" />
               </div>
-              <div className="flex overflow-hidden items-center max-w-[200px] md:max-w-xs">
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8 }}
-                  className="text-gray-900 dark:text-white font-medium tracking-tight text-sm md:text-base whitespace-nowrap"
-                >
-                  {logoText}
-                </motion.span>
-              </div>
+              <span className="text-gray-900 dark:text-white font-bold text-xl">
+                GENESIS
+              </span>
             </Link>
           </div>
           
@@ -88,7 +77,7 @@ export default function Navbar() {
               href="#contato"
               className="subtle-button text-sm"
             >
-              Contato
+              {t('nav.contact')}
             </a>
           </div>
           
@@ -169,7 +158,7 @@ export default function Navbar() {
                   className="apple-button mt-6 inline-block"
                   onClick={closeMenu}
                 >
-                  Contato
+                  {t('nav.contact')}
                 </a>
               </motion.div>
             </div>

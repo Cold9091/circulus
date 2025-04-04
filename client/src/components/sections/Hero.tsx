@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 import { blurIn, fadeIn, parallaxScroll, revealText, slideUp, staggerContainer } from "@/lib/animations";
 import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
+import { useLanguage } from "@/hooks/use-language";
 
 export default function Hero() {
   const textRef = useRef<HTMLDivElement>(null);
   const [countStarted, setCountStarted] = useState(false);
+  const { t } = useLanguage();
 
   // Efeito de reveal em caracteres
   useEffect(() => {
-    // Efeito de reveal em caracteres
     if (textRef.current) {
       const text = textRef.current.innerText;
       textRef.current.innerHTML = '';
@@ -52,19 +53,12 @@ export default function Hero() {
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.h2 
-            className="text-xs uppercase tracking-widest mb-6 text-gray-500 dark:text-gray-400"
-            variants={fadeIn}
-            custom={0.1}
-          >
-            Digital Pro Angola
-          </motion.h2>
           <div className="overflow-hidden mb-4">
             <motion.h1 
               className="text-4xl md:text-6xl lg:text-8xl font-bold text-black dark:text-white leading-tight"
               variants={slideUp}
             >
-              <span className="text-gradient">Criamos experiências</span>
+              <span className="text-gradient">{t('hero.title.1')}</span>
             </motion.h1>
           </div>
           <div className="overflow-hidden mb-10">
@@ -72,16 +66,14 @@ export default function Hero() {
               className="text-4xl md:text-6xl lg:text-8xl font-bold text-black dark:text-white leading-tight"
               variants={slideUp}
             >
-              digitais que impressionam
+              {t('hero.title.2')}
             </motion.h1>
           </div>
           <motion.p 
             className="text-lg md:text-xl max-w-3xl text-gray-600 dark:text-gray-300 mb-12"
             variants={blurIn}
           >
-            Soluções profissionais de <span className="font-semibold">Social Media</span> e{" "}
-            <span className="font-semibold">Criação de Websites</span> que transformam a presença 
-            digital do seu negócio com uma abordagem moderna e sofisticada.
+            {t('hero.description')}
           </motion.p>
           <motion.div 
             className="flex flex-wrap justify-center gap-5"
@@ -94,7 +86,7 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)" }}
             >
-              Conhecer Serviços
+              {t('hero.cta.primary')}
             </motion.a>
             <motion.a 
               href="#contato" 
@@ -102,12 +94,10 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               whileHover={{ scale: 1.05, boxShadow: "0 8px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)" }}
             >
-              Solicitar Orçamento
+              {t('hero.cta.secondary')}
             </motion.a>
           </motion.div>
         </motion.div>
-
-
 
         {/* Stats com estilo Apple */}
         <motion.div 
@@ -119,10 +109,10 @@ export default function Hero() {
           variants={staggerContainer}
         >
           {[
-            { value: 120, suffix: "+", label: "Clientes Satisfeitos" },
-            { value: 200, suffix: "+", label: "Projetos Entregues" },
-            { value: 1, suffix: "M+", label: "Engajamento Gerado" },
-            { value: 98, suffix: "%", label: "Taxa de Satisfação" },
+            { value: 120, suffix: "+", label: t('hero.stats.clients') },
+            { value: 200, suffix: "+", label: t('hero.stats.projects') },
+            { value: 1, suffix: "M+", label: t('hero.stats.engagement') },
+            { value: 98, suffix: "%", label: t('hero.stats.satisfaction') },
           ].map((stat, index) => (
             <motion.div
               key={index}
@@ -157,7 +147,7 @@ export default function Hero() {
         {/* Texto com animação por caractere */}
         <div className="mt-32 mb-20 text-center">
           <p className="char-animation text-lg md:text-xl text-gray-600 dark:text-gray-300" ref={textRef}>
-            Elevando marcas através do digital desde 2020
+            {t('hero.since')}
           </p>
         </div>
       </div>
