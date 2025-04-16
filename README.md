@@ -1,6 +1,6 @@
-# GENESIS - Website
+# CIRCULUS - Website
 
-Website institucional da GENESIS, desenvolvido com React, TypeScript e TailwindCSS.
+Website institucional da Circulus, desenvolvido com React, TypeScript e TailwindCSS.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -104,6 +104,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 📞 Contato
 
-GENESIS - [@genesis_angola](https://instagram.com/genesis_angola)
+CIRCULUS  - [@CIRCULUS_angola](https://instagram.com/CIRCULUS_angola)
 
 Link do Projeto: [https://github.com/Cold9091/meu-site](https://github.com/Cold9091/meu-site) 

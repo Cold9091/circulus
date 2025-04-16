@@ -49,7 +49,7 @@ export default function Navbar() {
                 <div className="absolute inset-2 bg-black dark:bg-white rounded-full" />
               </div>
               <span className="text-gray-900 dark:text-white font-bold text-xl">
-                GENESIS
+                CIRCULUS  
               </span>
             </Link>
           </div>

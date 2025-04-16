@@ -24,7 +24,7 @@ export const PACKAGES = {
     },
     {
       title: "Pacote Intermediário",
-      price: "Kz 75.000",
+      price: "Kz 50.000",
       period: "mês",
       description: "Perfeito para negócios em crescimento que buscam maior engajamento.",
       features: [
@@ -38,7 +38,7 @@ export const PACKAGES = {
     },
     {
       title: "Pacote Avançado",
-      price: "Kz 120.000",
+      price: "Kz 75.000",
       period: "mês",
       description: "Solução completa para empresas que buscam resultados expressivos.",
       features: [
@@ -54,7 +54,7 @@ export const PACKAGES = {
   websites: [
     {
       title: "Landing Page",
-      price: "Kz 75.000",
+      price: "Kz 90.000",
       period: "projeto",
       description: "Página única e eficiente para promover seus produtos ou serviços.",
       features: [
@@ -67,7 +67,7 @@ export const PACKAGES = {
     },
     {
       title: "Site Profissional",
-      price: "Kz 120.000",
+      price: "Kz 140.000",
       period: "projeto",
       description: "Site institucional completo para empresas que querem se destacar.",
       features: [
@@ -80,7 +80,7 @@ export const PACKAGES = {
     },
     {
       title: "E-commerce",
-      price: "Kz 170.000",
+      price: "Kz 190.000",
       period: "projeto",
       description: "Loja virtual completa para vender produtos ou serviços online.",
       features: [

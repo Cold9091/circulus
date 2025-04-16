@@ -17,7 +17,7 @@ export default function SocialMediaPackages() {
     },
     {
       title: "Pacote Intermediário",
-      price: "Kz 75.000",
+      price: "Kz 50.000",
       description: "Perfeito para negócios em crescimento que buscam maior engajamento.",
       features: [
         { text: "20 posts por mês", available: true },
@@ -30,7 +30,7 @@ export default function SocialMediaPackages() {
     },
     {
       title: "Pacote Avançado",
-      price: "Kz 120.000",
+      price: "Kz 80.000",
       description: "Solução completa para empresas que buscam resultados expressivos.",
       features: [
         { text: "30 posts por mês", available: true },

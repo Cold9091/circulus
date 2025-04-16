@@ -29,13 +29,14 @@ export const contactForms = pgTable("contact_forms", {
 });
 
 export const ContactFormSchema = z.object({
-  name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
-  email: z.string().email({ message: "Email inválido" }),
-  phone: z.string().optional(),
-  service: z.string().optional(),
-  message: z.string().optional(),
+  name: z.string().min(1, "Nome é obrigatório"),
+  email: z.string().email("Email inválido"),
+  phone: z.string().min(1, "Telefone é obrigatório"),
+  service: z.string().min(1, "Serviço é obrigatório"),
+  message: z.string().min(1, "Mensagem é obrigatória"),
 });
 
+export type ContactFormData = z.infer<typeof ContactFormSchema>;
 export type ContactForm = typeof contactForms.$inferSelect;
 export type InsertContactForm = typeof contactForms.$inferInsert;
 

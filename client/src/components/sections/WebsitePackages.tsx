@@ -5,19 +5,20 @@ export default function WebsitePackages() {
   const packages = [
     {
       title: "Landing Page",
-      price: "Kz 75.000",
+      price: "Kz 90.000",
       description: "Página única e eficiente para promover seus produtos ou serviços.",
       features: [
         "Site de uma página",
         "Design responsivo e otimizado para SEO",
         "Formulário de contato",
+        "Integração com redes socias",
         "Tempo de entrega: 5 dias úteis",
       ],
       popular: false,
     },
     {
       title: "Site Profissional",
-      price: "Kz 120.000",
+      price: "Kz 140.000",
       description: "Site institucional completo para empresas que querem se destacar.",
       features: [
         "Site institucional completo (4-6 páginas)",
@@ -29,7 +30,7 @@ export default function WebsitePackages() {
     },
     {
       title: "E-commerce",
-      price: "Kz 170.000",
+      price: "Kz 190.000",
       description: "Loja virtual completa para vender produtos ou serviços online.",
       features: [
         "Loja virtual completa",

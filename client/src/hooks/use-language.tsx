@@ -2,13 +2,36 @@ import React, { createContext, useContext, useState } from "react";
 
 type Language = "pt" | "en";
 
+type TranslationKeys = 
+  | "nav.home" 
+  | "nav.services" 
+  | "nav.social" 
+  | "nav.websites" 
+  | "nav.contact"
+  | "hero.title.1"
+  | "hero.title.2"
+  | "hero.description"
+  | "hero.cta.primary"
+  | "hero.cta.secondary"
+  | "hero.stats.clients"
+  | "hero.stats.projects"
+  | "hero.stats.engagement"
+  | "hero.stats.satisfaction"
+  | "hero.since";
+
+type Translations = {
+  [K in Language]: {
+    [T in TranslationKeys]: string;
+  };
+};
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: TranslationKeys) => string;
 }
 
-const translations = {
+const translations: Translations = {
   pt: {
     "nav.home": "Início",
     "nav.services": "Serviços",
@@ -50,8 +73,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("pt");
 
-  const t = (key: string): string => {
-    return translations[language][key] || key;
+  const t = (key: TranslationKeys): string => {
+    return translations[language][key];
   };
 
   return (
