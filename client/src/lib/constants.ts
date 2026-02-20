@@ -54,7 +54,7 @@ export const PACKAGES = {
   websites: [
     {
       title: "Landing Page",
-      price: "Kz 90.000",
+      price: "Kz 150.000",
       period: "projeto",
       description: "Página única e eficiente para promover seus produtos ou serviços.",
       features: [
@@ -67,7 +67,7 @@ export const PACKAGES = {
     },
     {
       title: "Site Profissional",
-      price: "Kz 140.000",
+      price: "Kz 210.000",
       period: "projeto",
       description: "Site institucional completo para empresas que querem se destacar.",
       features: [
@@ -80,7 +80,7 @@ export const PACKAGES = {
     },
     {
       title: "E-commerce",
-      price: "Kz 190.000",
+      price: "Kz 350.000",
       period: "projeto",
       description: "Loja virtual completa para vender produtos ou serviços online.",
       features: [
